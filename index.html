@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DR CELL - Reparación Profesional</title>
-
     <style>
         body {
             margin: 0;
@@ -13,24 +12,38 @@
             color: #222;
         }
 
-        /* HEADER */
+        /* ENCABEZADO CON IMAGEN */
         .hero {
-            background: linear-gradient(120deg, #ff0000, #660000);
+            background: url('banner-dr-cell.png') center/cover no-repeat;
             color: white;
-            padding: 80px 20px;
+            padding: 120px 20px;
             text-align: center;
-            animation: fadeIn 1.2s ease;
         }
 
         .hero h1 {
             font-size: 3rem;
             margin: 0;
             letter-spacing: 2px;
+            text-shadow: 0 3px 8px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            margin-top: 10px;
             opacity: 0.9;
+        }
+
+        .hero-icons {
+            margin-top: 25px;
+            font-size: 1.1rem;
+        }
+
+        .hero-icons span {
+            margin: 0 15px;
+            display: inline-block;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 15px;
+            border-radius: 8px;
         }
 
         /* SECCIONES */
@@ -96,12 +109,6 @@
             padding: 20px;
             margin-top: 40px;
         }
-
-        /* ANIMACIÓN */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
     </style>
 </head>
 
@@ -111,6 +118,11 @@
     <div class="hero">
         <h1>DR CELL</h1>
         <p>Reparación Profesional de Software y Hardware Móvil en La Habana</p>
+        <div class="hero-icons">
+            <span>🔧 Servicio Profesional</span>
+            <span>💡 Reparaciones Garantizadas</span>
+            <span>⚙️ Tecnología Avanzada</span>
+        </div>
     </div>
 
     <!-- SERVICIOS -->
