@@ -13,16 +13,22 @@
             color: #222;
         }
 
-        /* HERO */
+        /* HERO FULLSCREEN */
         .hero {
             position: relative;
             background: url('banner-dr-cell.jpg') center/cover no-repeat;
             color: white;
-            padding: 140px 20px;
+            height: 100vh; /* Ocupa toda la pantalla */
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            padding: 0 20px;
         }
 
-        /* Capa oscura para mejorar la lectura */
+        /* Capa oscura */
         .hero::before {
             content: "";
             position: absolute;
@@ -40,16 +46,31 @@
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin: 0;
             letter-spacing: 2px;
             text-shadow: 0 3px 8px rgba(0,0,0,0.6);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             margin-top: 10px;
             opacity: 0.95;
+        }
+
+        /* Ajustes móviles */
+        @media (max-width: 600px) {
+            .hero {
+                height: 90vh;
+            }
+
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
         }
 
         /* SECCIONES */
