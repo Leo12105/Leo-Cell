@@ -48,7 +48,6 @@
             margin-top: 10px;
         }
 
-        /* BOTÓN PRINCIPAL */
         .main-btn {
             display: inline-block;
             background: #cc0000;
@@ -65,7 +64,7 @@
             background: #990000;
         }
 
-        /* SECCIÓN SERVICIOS */
+        /* SECCIONES */
         .section {
             max-width: 1100px;
             margin: auto;
@@ -90,7 +89,12 @@
             padding: 25px;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
         }
 
         .card h3 {
@@ -98,26 +102,19 @@
             color: #cc0000;
         }
 
-        .btn-wsp {
-            display: block;
-            background: #25D366;
+        .btn {
+            display: inline-block;
+            background: #cc0000;
             color: white;
-            padding: 10px;
+            padding: 12px 20px;
             border-radius: 8px;
             text-decoration: none;
-            margin-top: 10px;
             font-weight: bold;
+            margin-top: 15px;
         }
 
-        .btn-call {
-            display: block;
-            background: #007bff;
-            color: white;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin-top: 10px;
-            font-weight: bold;
+        .btn:hover {
+            background: #990000;
         }
 
         footer {
@@ -126,6 +123,23 @@
             text-align: center;
             padding: 20px;
             margin-top: 40px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 15px 18px;
+            border-radius: 50%;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .whatsapp-float:hover {
+            background: #1ebe5d;
         }
     </style>
 </head>
@@ -137,60 +151,79 @@
         <h1>DR CELL</h1>
         <p>Reparación Profesional de Software y Hardware Móvil en La Habana</p>
 
-        <!-- BOTÓN QUE LLEVA A SERVICIOS -->
-        <a href="#servicios" class="main-btn">Servicios</a>
+        <!-- BOTÓN QUE LLEVA A LA PÁGINA DE SERVICIOS -->
+        <a href="servicios.html" class="main-btn">Servicios</a>
     </div>
 
-    <!-- SECCIÓN SERVICIOS -->
-    <div id="servicios" class="section">
-        <h2 class="title">Servicios Disponibles</h2>
+    <!-- SOBRE DR CELL -->
+    <div class="section">
+        <h2 class="title">Sobre DR CELL</h2>
+        <p style="font-size:1.1rem; line-height:1.6;">
+            DR CELL es un servicio técnico dedicado a la reparación de dispositivos móviles, con experiencia en soluciones de software y hardware. 
+            El enfoque siempre ha sido trabajar con seriedad, transparencia y resultados confiables, ofreciendo a cada cliente una atención clara y directa.
+        </p>
+    </div>
+
+    <!-- SERVICIOS SOFTWARE -->
+    <div class="section">
+        <h2 class="title">Servicios de Software</h2>
 
         <div class="cards">
-
-            <!-- SERVICIO 1 -->
-            <div class="card">
-                <h3>🔓 Desbloqueos</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20Desbloqueos" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
-            <!-- SERVICIO 2 -->
-            <div class="card">
-                <h3>📶 Liberaciones</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20Liberaciones" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
-            <!-- SERVICIO 3 -->
-            <div class="card">
-                <h3>🔐 FRP</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20FRP" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
-            <!-- SERVICIO 4 -->
-            <div class="card">
-                <h3>⚙️ Flasheos</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20Flasheos" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
-            <!-- SERVICIO 5 -->
-            <div class="card">
-                <h3>🍏 Apps para iPhone</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20Apps%20para%20iPhone" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
-            <!-- SERVICIO 6 -->
-            <div class="card">
-                <h3>🤖 Apps para Android</h3>
-                <a class="btn-wsp" href="https://wa.me/5356194280?text=Hola%20quiero%20información%20sobre%20Apps%20para%20Android" target="_blank">WhatsApp</a>
-                <a class="btn-call" href="tel:+5356194280">Llamar</a>
-            </div>
-
+            <div class="card"><h3>🔓 Desbloqueos</h3></div>
+            <div class="card"><h3>📶 Liberaciones</h3></div>
+            <div class="card"><h3>🔐 FRP</h3></div>
+            <div class="card"><h3>⚙️ Flasheos</h3></div>
+            <div class="card"><h3>🍏 Apps para iPhone</h3></div>
+            <div class="card"><h3>🤖 Apps para Android</h3></div>
         </div>
     </div>
+
+    <!-- SERVICIOS HARDWARE -->
+    <div class="section">
+        <h2 class="title">Servicios de Hardware</h2>
+
+        <div class="cards">
+            <div class="card"><h3>📱 Cambios de pantallas</h3></div>
+            <div class="card"><h3>🔋 Cambios de baterías</h3></div>
+            <div class="card"><h3>🔌 Puertos de carga</h3></div>
+            <div class="card"><h3>🛠 Reparaciones en la placa</h3></div>
+            <div class="card"><h3>🔥 Microsoldaduras</h3></div>
+        </div>
+    </div>
+
+    <!-- HORARIOS -->
+    <div class="section">
+        <h2 class="title">Horarios</h2>
+        <p style="text-align:center; font-size:1.2rem;">
+            <b>Lunes a Viernes:</b> 10:00 AM – 4:00 PM<br>
+            <b>Sábados:</b> 10:00 AM – 2:00 PM<br>
+            <b>Domingos:</b> Cerrado
+        </p>
+    </div>
+
+    <!-- UBICACIÓN -->
+    <div class="section">
+        <h2 class="title">Ubicación</h2>
+        <p style="text-align:center; font-size:1.2rem;">
+            Marianao (La Habana)<br>
+            Avenida 43 / 118 y 120<br>
+            #11807 interior 2
+        </p>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="section">
+        <h2 class="title">Contacto</h2>
+        <p style="text-align:center; font-size:1.2rem;">
+            WhatsApp y llamadas: <b>+53 5619 4280</b>
+        </p>
+
+        <div style="text-align:center;">
+            <a class="btn" href="https://wa.me/5356194280" target="_blank">Contactar por WhatsApp</a>
+        </div>
+    </div>
+
+    <a class="whatsapp-float" href="https://wa.me/5356194280" target="_blank">💬</a>
 
     <footer>
         © 2026 DR CELL — Servicio Técnico Profesional
