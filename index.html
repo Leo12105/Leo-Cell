@@ -15,10 +15,28 @@
 
         /* HERO */
         .hero {
-            background: url('banner-dr-cell.png') center/cover no-repeat;
+            position: relative;
+            background: url('banner-dr-cell.jpg') center/cover no-repeat;
             color: white;
             padding: 140px 20px;
             text-align: center;
+        }
+
+        /* Capa oscura para mejorar la lectura */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(1px);
+        }
+
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
