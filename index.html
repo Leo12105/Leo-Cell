@@ -40,7 +40,7 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid #4a4fff;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            box-sizing: border-box;
         }
 
         .logo {
@@ -51,6 +51,8 @@
             list-style: none;
             display: flex;
             gap: 25px;
+            margin: 0;
+            padding: 0;
         }
 
         .nav-links a {
@@ -59,6 +61,7 @@
             font-weight: bold;
             font-size: 1.1rem;
             transition: 0.3s;
+            white-space: nowrap; /* evita que se corte la palabra */
         }
 
         .nav-links a:hover {
@@ -188,13 +191,32 @@
 
         /* RESPONSIVE */
         @media (max-width: 600px) {
+
             .logo { height: 45px; }
-            .nav-links { gap: 12px; }
-            .nav-links a { font-size: 0.9rem; }
+
+            /* FIX: menú más pequeño para que no se corte “Contacto” */
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+
             .hero h1 { font-size: 1.8rem; }
-            .info { margin: 20px; }
-            .btn-float { width: 55px; height: 55px; }
-            .btn-float img { width: 28px; }
+
+            .info {
+                margin: 20px;
+            }
+
+            .btn-float {
+                width: 55px;
+                height: 55px;
+            }
+
+            .btn-float img {
+                width: 28px;
+            }
         }
     </style>
 </head>
