@@ -6,38 +6,45 @@
     <title>Servicios - DR CELL</title>
 
     <style>
-        body {
+        /* ELIMINA SCROLL HORIZONTAL */
+        html, body {
+            overflow-x: hidden !important;
+            width: 100% !important;
             margin: 0;
+            padding: 0;
+        }
+
+        body {
             font-family: 'Segoe UI', sans-serif;
 
-            /* FONDO FIBRA DE CARBONO OSCURA */
-            background: #0f0f0f;
-            background-image:
-                linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
-            background-size: 18px 18px;
-            background-position: 0 0, 0 9px, 9px -9px, -9px 0px;
-
+            /* FONDO DEGRADADO ESTILO QvaCloud */
+            background: linear-gradient(135deg, #0a0f24, #1a1f3c, #2a1f5c);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
             color: #fff;
         }
 
-        /* CABECERA NEGRA UNIFICADA */
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* CABECERA */
         .navbar {
             width: 100%;
-            background: #000;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(6px);
             padding: 15px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-            border-bottom: 4px solid #b30000;
+            border-bottom: 2px solid #4a4fff;
+            box-sizing: border-box;
         }
 
         .logo {
             height: 70px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
         }
 
         .nav-links {
@@ -49,142 +56,110 @@
         }
 
         .nav-links a {
-            color: #ff3333;
+            color: #8aa0ff;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
             transition: 0.3s;
+            white-space: nowrap;
         }
 
         .nav-links a:hover {
             color: #ffffff;
+            text-shadow: 0 0 8px #4a6cff;
         }
 
         /* TÍTULO PRINCIPAL */
-        .header {
-            background: #000;
-            padding: 25px;
+        .titulo {
             text-align: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-            border-bottom: 4px solid #b30000;
+            margin-top: 40px;
+            font-size: 2.2rem;
+            color: #8aa0ff;
+            text-shadow: 0 0 12px #4a6cff;
         }
 
-        .section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* TÍTULOS PROFESIONALES */
-        .title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #ff3333;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-            font-weight: bold;
-        }
-
-        .title-bar {
-            width: 120px;
-            height: 5px;
-            background: #000;
-            margin: 8px auto 25px auto;
-            border-radius: 3px;
-            box-shadow: 0 2px 6px rgba(255,0,0,0.5);
-        }
-
-        .cards {
+        /* CONTENEDOR DE SERVICIOS */
+        .servicios-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 25px;
         }
 
-        /* TARJETAS PROFESIONALES */
+        /* TARJETAS */
         .card {
-            background: #d9d9d9;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 12px;
             padding: 25px;
-            border-radius: 16px;
-            border: 3px solid #000;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.45);
             text-align: center;
+            backdrop-filter: blur(6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             transition: 0.3s;
-            color: #000;
         }
 
         .card:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 12px 30px rgba(255,0,0,0.4);
-            border-color: #ff1a1a;
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px #4a6cff;
         }
 
         .card h3 {
-            margin-top: 0;
-            color: #b30000;
             font-size: 1.4rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            color: #8aa0ff;
+            text-shadow: 0 0 10px #4a6cff;
+            margin-bottom: 10px;
         }
 
-        /* BOTONES REDONDOS */
-        .btn-circle {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            margin: 10px;
+        .card p {
+            color: #d0d4ff;
+            font-size: 1rem;
+        }
+
+        /* BOTONES */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 18px;
+            background: #4a6cff;
+            color: #fff;
+            border-radius: 8px;
             text-decoration: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.35);
-            transition: 0.2s;
-        }
-
-        .btn-circle:hover {
-            transform: scale(1.15);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-        }
-
-        .btn-circle img {
-            width: 32px;
-            height: 32px;
-            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.4));
-        }
-
-        .wsp {
-            background: #25D366;
-        }
-
-        .call {
-            background: #007bff;
-        }
-
-        .back {
-            display: block;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 1.2rem;
-            text-decoration: none;
-            color: #ff3333;
             font-weight: bold;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            box-shadow: 0 0 12px #4a6cff;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #6a8cff;
+            box-shadow: 0 0 18px #6a8cff;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
+            text-align: center;
+            padding: 15px;
+            border-top: 2px solid #4a4fff;
+            color: #d0d4ff;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .logo { height: 45px; }
+            .nav-links { gap: 12px; }
+            .nav-links a { font-size: 0.85rem; }
+            .titulo { font-size: 1.8rem; }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- CABECERA NEGRA -->
+    <!-- CABECERA -->
     <nav class="navbar">
         <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
         <ul class="nav-links">
@@ -194,140 +169,41 @@
         </ul>
     </nav>
 
-    <!-- TÍTULO PRINCIPAL -->
-    <div class="header">Servicios Disponibles</div>
+    <!-- TÍTULO -->
+    <h1 class="titulo">Servicios Disponibles</h1>
 
-    <!-- SERVICIOS DE SOFTWARE -->
-    <div class="section">
-        <h2 class="title">Servicios de Software</h2>
-        <div class="title-bar"></div>
+    <!-- TARJETAS DE SERVICIOS -->
+    <div class="servicios-container">
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>🔓 Desbloqueos</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20Desbloqueos" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>📶 Liberaciones</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20Liberaciones" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🔐 FRP</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20FRP" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>⚙️ Flasheos</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20Flasheos" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🍏 Apps para iPhone</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20Apps%20para%20iPhone" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🤖 Apps para Android</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20Apps%20para%20Android" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
+        <div class="card">
+            <h3>🔒 Desbloqueos</h3>
+            <p>Eliminación de cuentas, patrones, PIN y más.</p>
+            <a class="btn" href="#">Consultar</a>
         </div>
+
+        <div class="card">
+            <h3>📶 Liberaciones</h3>
+            <p>Libera tu móvil para cualquier operador.</p>
+            <a class="btn" href="#">Consultar</a>
+        </div>
+
+        <div class="card">
+            <h3>⚙️ Software</h3>
+            <p>Flasheo, instalación de firmware, reparación de sistema.</p>
+            <a class="btn" href="#">Consultar</a>
+        </div>
+
+        <div class="card">
+            <h3>🔧 Hardware</h3>
+            <p>Cambio de pantallas, baterías, conectores y más.</p>
+            <a class="btn" href="#">Consultar</a>
+        </div>
+
     </div>
 
-    <!-- SERVICIOS DE HARDWARE -->
-    <div class="section">
-        <h2 class="title">Servicios de Hardware</h2>
-        <div class="title-bar"></div>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>📱 Cambios de pantallas</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20cambios%20de%20pantallas" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🔋 Cambios de baterías</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20cambios%20de%20baterías" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🔌 Puertos de carga</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20puertos%20de%20carga" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🛠 Reparaciones en la placa</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20reparaciones%20en%20la%20placa" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-            <div class="card">
-                <h3>🔥 Microsoldaduras</h3>
-                <a class="btn-circle wsp" href="https://wa.me/5356194280?text=Hola,%20quiero%20información%20sobre%20microsoldaduras" target="_blank">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-                </a>
-                <a class="btn-circle call" href="tel:+5356194280">
-                    <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
-                </a>
-            </div>
-
-        </div>
-    </div>
-
-    <a class="back" href="index.html">⬅ Volver a la página principal</a>
+    <footer>
+        © 2026 DR CELL - Todos los derechos reservados
+    </footer>
 
 </body>
 </html>
