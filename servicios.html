@@ -43,8 +43,31 @@
             box-sizing: border-box;
         }
 
+        /* CONTENEDOR DEL LOGO + TEXTO */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* LOGO CIRCULAR */
         .logo {
             height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #4a6cff;
+            box-shadow: 0 0 12px #4a6cff;
+        }
+
+        /* TEXTO AL LADO DEL LOGO */
+        .logo-text {
+            font-size: 1.6rem;
+            font-weight: bold;
+            color: #8aa0ff;
+            text-shadow: 0 0 10px #4a6cff;
+            letter-spacing: 1px;
+            white-space: nowrap;
         }
 
         .nav-links {
@@ -117,7 +140,7 @@
             font-size: 1rem;
         }
 
-        /* BOTONES */
+        /* BOTÓN */
         .btn {
             display: inline-block;
             margin-top: 15px;
@@ -149,7 +172,8 @@
 
         /* RESPONSIVE */
         @media (max-width: 600px) {
-            .logo { height: 45px; }
+            .logo { height: 50px; width: 50px; }
+            .logo-text { font-size: 1.2rem; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.85rem; }
             .titulo { font-size: 1.8rem; }
@@ -161,12 +185,18 @@
 
     <!-- CABECERA -->
     <nav class="navbar">
-        <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
+
+        <div class="logo-container">
+            <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
+            <span class="logo-text">DR CELL</span>
+        </div>
+
         <ul class="nav-links">
             <li><a href="index.html">Inicio</a></li>
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
+
     </nav>
 
     <!-- TÍTULO -->
