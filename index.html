@@ -60,13 +60,15 @@
             box-shadow: 0 0 12px #4a6cff;
         }
 
-        /* TEXTO AL LADO DEL LOGO */
+        /* TEXTO DR CELL — ESTILO 1 FUTURISTA */
         .logo-text {
-            font-size: 1.6rem;
-            font-weight: bold;
-            color: #8aa0ff;
-            text-shadow: 0 0 10px #4a6cff;
-            letter-spacing: 1px;
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #6a8cff, #8aa0ff, #b0c4ff);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 12px #4a6cff;
+            letter-spacing: 2px;
             white-space: nowrap;
         }
 
@@ -215,7 +217,7 @@
         /* RESPONSIVE */
         @media (max-width: 600px) {
             .logo { height: 50px; width: 50px; }
-            .logo-text { font-size: 1.2rem; }
+            .logo-text { font-size: 1.3rem; letter-spacing: 1px; }
             .nav-links { gap: 12px; }
             .nav-links a { font-size: 0.85rem; }
             .hero h1 { font-size: 1.8rem; }
