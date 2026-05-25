@@ -64,7 +64,6 @@
         /* BARRA DE ESTADO */
         .estado-local {
             width: 100%;
-            text-align: center;
             padding: 12px 0;
             font-size: 1.2rem;
             font-weight: bold;
@@ -72,10 +71,20 @@
             border-bottom: 3px solid #b30000;
             color: #fff;
             text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+
+            /* CENTRADO PERFECTO */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
         }
+
         .estado-abierto {
             color: #00ff66;
         }
+
         .estado-cerrado {
             color: #ff3333;
         }
