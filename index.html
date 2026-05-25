@@ -48,22 +48,22 @@
       color: #fff;
     }
 
-    /* Banner decorativo arriba */
+    /* Banner decorativo pequeño */
     .banner {
       width: 100%;
-      max-height: 220px;   /* AJUSTA LA ALTURA A TU GUSTO */
-      object-fit: cover;   /* Recorta bonito sin deformar */
+      height: 120px;       /* ALTURA PEQUEÑA */
+      object-fit: cover;   /* Recorta bonito */
       display: block;
     }
 
-    /* Sección principal */
+    /* Contenido principal */
     .hero {
       text-align: center;
-      padding: 60px 20px;
+      padding: 40px 20px;
     }
 
     .hero h1 {
-      font-size: 36px;
+      font-size: 32px;
       color: #00aaff;
       margin-bottom: 10px;
       text-shadow: 0 0 10px #000;
@@ -75,12 +75,32 @@
       text-shadow: 0 0 10px #000;
     }
 
+    /* Sección de información (horario, dirección, etc.) */
+    .info {
+      padding: 20px;
+      text-align: center;
+      background: #0a0a0a;
+      margin-top: 20px;
+      border-top: 1px solid #222;
+    }
+
+    .info h2 {
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .info p {
+      margin: 5px 0;
+      color: #ccc;
+    }
+
     footer {
       background: #111;
       text-align: center;
       padding: 15px;
       font-size: 14px;
       color: #888;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -97,13 +117,21 @@
     </ul>
   </nav>
 
-  <!-- Banner decorativo -->
+  <!-- Banner decorativo pequeño -->
   <img src="banner-dr-cell.jpg" alt="Banner DR CELL" class="banner">
 
   <!-- Sección principal -->
   <section class="hero">
     <h1>Bienvenido a DR CELL</h1>
     <p>Servicio Técnico de Móviles en La Habana</p>
+  </section>
+
+  <!-- Sección de información (como la tenías antes) -->
+  <section class="info">
+    <h2>Información</h2>
+    <p><strong>Horario:</strong> Lunes a Sábado, 9:00 AM - 6:00 PM</p>
+    <p><strong>Dirección:</strong> Marianao, Calle 43 / 118 y 120</p>
+    <p><strong>Teléfono:</strong> +53 5 000 0000</p>
   </section>
 
   <!-- Pie de página -->
