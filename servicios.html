@@ -6,7 +6,6 @@
     <title>Servicios - DR CELL</title>
 
     <style>
-        /* ELIMINA SCROLL HORIZONTAL */
         html, body {
             overflow-x: hidden !important;
             width: 100% !important;
@@ -16,8 +15,6 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-
-            /* FONDO DEGRADADO ESTILO QvaCloud */
             background: linear-gradient(135deg, #0a0f24, #1a1f3c, #2a1f5c);
             background-size: 400% 400%;
             animation: fondoAnimado 12s ease infinite;
@@ -30,7 +27,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CABECERA */
         .navbar {
             width: 100%;
             background: rgba(0,0,0,0.65);
@@ -43,14 +39,12 @@
             box-sizing: border-box;
         }
 
-        /* CONTENEDOR DEL LOGO + TEXTO */
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        /* LOGO CIRCULAR */
         .logo {
             height: 70px;
             width: 70px;
@@ -60,7 +54,6 @@
             box-shadow: 0 0 12px #4a6cff;
         }
 
-        /* TEXTO DR CELL — ESTILO FUTURISTA */
         .logo-text {
             font-size: 1.8rem;
             font-weight: 800;
@@ -94,7 +87,6 @@
             text-shadow: 0 0 8px #4a6cff;
         }
 
-        /* TÍTULO PRINCIPAL */
         .titulo {
             text-align: center;
             margin-top: 40px;
@@ -103,7 +95,6 @@
             text-shadow: 0 0 12px #4a6cff;
         }
 
-        /* CONTENEDOR DE SERVICIOS */
         .servicios-container {
             max-width: 1000px;
             margin: 40px auto;
@@ -113,7 +104,6 @@
             gap: 25px;
         }
 
-        /* TARJETAS */
         .card {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
@@ -140,9 +130,9 @@
         .card p {
             color: #d0d4ff;
             font-size: 1rem;
+            line-height: 1.5rem;
         }
 
-        /* BOTÓN */
         .btn {
             display: inline-block;
             margin-top: 15px;
@@ -161,7 +151,6 @@
             box-shadow: 0 0 18px #6a8cff;
         }
 
-        /* FOOTER */
         footer {
             background: rgba(0,0,0,0.6);
             backdrop-filter: blur(4px);
@@ -172,7 +161,6 @@
             margin-top: 40px;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 600px) {
             .logo { height: 50px; width: 50px; }
             .logo-text { font-size: 1.3rem; letter-spacing: 1px; }
@@ -187,7 +175,6 @@
 
     <!-- CABECERA -->
     <nav class="navbar">
-
         <div class="logo-container">
             <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
             <span class="logo-text">DR CELL</span>
@@ -198,7 +185,6 @@
             <li><a href="servicios.html">Servicios</a></li>
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
-
     </nav>
 
     <!-- TÍTULO -->
@@ -207,27 +193,32 @@
     <!-- TARJETAS DE SERVICIOS -->
     <div class="servicios-container">
 
-        <div class="card">
-            <h3>🔒 Desbloqueos</h3>
-            <p>Eliminación de cuentas, patrones, PIN y más.</p>
-            <a class="btn" href="#">Consultar</a>
-        </div>
-
-        <div class="card">
-            <h3>📶 Liberaciones</h3>
-            <p>Libera tu móvil para cualquier operador.</p>
-            <a class="btn" href="#">Consultar</a>
-        </div>
-
+        <!-- SOFTWARE -->
         <div class="card">
             <h3>⚙️ Software</h3>
-            <p>Flasheo, instalación de firmware, reparación de sistema.</p>
+            <p>
+                Desbloqueos<br>
+                Flasheos<br>
+                FRP<br>
+                Liberaciones de compañía<br>
+                Aplicaciones para iPhone<br>
+                Aplicaciones para Android<br>
+                Creación de cuentas iCloud
+            </p>
             <a class="btn" href="#">Consultar</a>
         </div>
 
+        <!-- HARDWARE -->
         <div class="card">
             <h3>🔧 Hardware</h3>
-            <p>Cambio de pantallas, baterías, conectores y más.</p>
+            <p>
+                Cambios de pantallas<br>
+                Cambios de baterías<br>
+                Cambio de botones<br>
+                Cambios de puertos de carga<br>
+                Reparaciones en la placa<br>
+                Microsoldaduras
+            </p>
             <a class="btn" href="#">Consultar</a>
         </div>
 
