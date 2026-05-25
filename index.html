@@ -32,7 +32,7 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-            border-bottom: 4px solid #b30000; /* línea roja elegante */
+            border-bottom: 4px solid #b30000;
         }
 
         .logo {
@@ -61,16 +61,29 @@
             color: #ffffff;
         }
 
+        /* BARRA DE ESTADO */
+        .estado-local {
+            width: 100%;
+            text-align: center;
+            padding: 12px 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: #000;
+            border-bottom: 3px solid #b30000;
+            color: #fff;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+        }
+        .estado-abierto {
+            color: #00ff66;
+        }
+        .estado-cerrado {
+            color: #ff3333;
+        }
+
         /* SECCIÓN PRINCIPAL */
         .hero {
             text-align: center;
             padding: 60px 20px;
-            animation: fadeIn 0.8s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .hero h1 {
@@ -88,27 +101,68 @@
         /* INFORMACIÓN */
         .info {
             max-width: 900px;
-            margin: auto;
+            margin: 40px auto;
             padding: 30px 20px;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.45);
             border: 2px solid #000;
             border-radius: 12px;
             box-shadow: 0 6px 20px rgba(0,0,0,0.5);
             text-align: center;
-            margin-bottom: 40px;
         }
 
         .info h2 {
             color: #ff3333;
             font-size: 1.8rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-shadow: 0 2px 6px rgba(0,0,0,0.6);
         }
 
-        .info p {
-            font-size: 1.1rem;
-            color: #ccc;
-            margin: 6px 0;
+        .info-item {
+            margin: 12px 0;
+            font-size: 1.2rem;
+        }
+
+        .info-label {
+            color: #ff3333;
+            font-weight: bold;
+        }
+
+        .info-value {
+            color: #ddd;
+        }
+
+        /* BOTONES FLOTANTES */
+        .btn-float {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            position: fixed;
+            right: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            z-index: 999;
+            transition: 0.3s;
+        }
+
+        .btn-float img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .btn-float:hover {
+            transform: scale(1.15);
+        }
+
+        .wsp-float {
+            bottom: 100px;
+            background: #25D366;
+        }
+
+        .call-float {
+            bottom: 20px;
+            background: #007bff;
         }
 
         footer {
@@ -125,7 +179,7 @@
 
 <body>
 
-    <!-- CABECERA NEGRA -->
+    <!-- CABECERA -->
     <nav class="navbar">
         <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
         <ul class="nav-links">
@@ -134,6 +188,9 @@
             <li><a href="contacto.html">Contacto</a></li>
         </ul>
     </nav>
+
+    <!-- ESTADO -->
+    <div id="estado-local" class="estado-local">Verificando horario...</div>
 
     <!-- SECCIÓN PRINCIPAL -->
     <section class="hero">
@@ -144,14 +201,80 @@
     <!-- INFORMACIÓN -->
     <section class="info">
         <h2>Información</h2>
-        <p><strong>Horario:</strong> Lunes a Sábado, 9:00 AM - 6:00 PM</p>
-        <p><strong>Dirección:</strong> Marianao, Calle 43 / 118 y 120</p>
-        <p><strong>Teléfono:</strong> +53 5 000 0000</p>
+
+        <div class="info-item">
+            <span class="info-label">Horario:</span>
+            <span class="info-value">
+                Lunes a Viernes: 10:00 AM – 4:00 PM<br>
+                Sábados: 10:00 AM – 2:00 PM<br>
+                Domingos: Cerrado
+            </span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Dirección:</span>
+            <span class="info-value">Marianao, Avenida 43 / 118 y 120 #11807 Interior 2</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Teléfono:</span>
+            <span class="info-value">+53 5619 4280</span>
+        </div>
     </section>
+
+    <!-- BOTÓN WHATSAPP -->
+    <a href="https://wa.me/5356194280" class="btn-float wsp-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+    </a>
+
+    <!-- BOTÓN LLAMADA -->
+    <a href="tel:+5356194280" class="btn-float call-float">
+        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
+    </a>
 
     <footer>
         © 2026 DR CELL - Todos los derechos reservados
     </footer>
+
+    <!-- SCRIPT HORARIO -->
+    <script>
+    function actualizarEstado() {
+        const estado = document.getElementById("estado-local");
+
+        const ahora = new Date();
+        const opciones = { timeZone: "America/Havana" };
+        const horaCuba = new Date(ahora.toLocaleString("en-US", opciones));
+
+        const dia = horaCuba.getDay();
+        const hora = horaCuba.getHours();
+        const minutos = horaCuba.getMinutes();
+
+        const totalMin = hora * 60 + minutos;
+
+        let abierto = false;
+
+        if (dia >= 1 && dia <= 5) {
+            if (totalMin >= 600 && totalMin <= 960) abierto = true;
+        }
+
+        if (dia === 6) {
+            if (totalMin >= 600 && totalMin <= 840) abierto = true;
+        }
+
+        if (abierto) {
+            estado.innerHTML = "🟢 Estamos ABIERTO ahora mismo";
+            estado.classList.add("estado-abierto");
+            estado.classList.remove("estado-cerrado");
+        } else {
+            estado.innerHTML = "🔴 Estamos CERRADO ahora mismo";
+            estado.classList.add("estado-cerrado");
+            estado.classList.remove("estado-abierto");
+        }
+    }
+
+    actualizarEstado();
+    setInterval(actualizarEstado, 60000);
+    </script>
 
 </body>
 </html>
