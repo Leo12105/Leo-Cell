@@ -6,7 +6,7 @@
     <title>DR CELL - Inicio</title>
 
     <style>
-        /* ELIMINA SCROLL HORIZONTAL EN TODA LA PÁGINA */
+        /* ELIMINA SCROLL HORIZONTAL */
         html, body {
             overflow-x: hidden !important;
             width: 100% !important;
@@ -17,83 +17,83 @@
         body {
             font-family: 'Segoe UI', sans-serif;
 
-            /* FONDO FIBRA DE CARBONO */
-            background: #0f0f0f;
-            background-image:
-                linear-gradient(45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-                linear-gradient(-45deg, rgba(255,255,255,0.03) 25%, transparent 25%),
-                linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.03) 75%),
-                linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.03) 75%);
-            background-size: 18px 18px;
-            background-position: 0 0, 0 9px, 9px -9px, -9px 0px;
-
+            /* FONDO DEGRADADO ESTILO QvaCloud */
+            background: linear-gradient(135deg, #0a0f24, #1a1f3c, #2a1f5c);
+            background-size: 400% 400%;
+            animation: fondoAnimado 12s ease infinite;
             color: #fff;
         }
 
-        /* CABECERA NEGRA */
+        @keyframes fondoAnimado {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* CABECERA */
         .navbar {
             width: 100%;
-            background: #000;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(6px);
             padding: 15px 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-            border-bottom: 4px solid #b30000;
-            box-sizing: border-box;
+            border-bottom: 2px solid #4a4fff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
         }
 
         .logo {
             height: 70px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
         }
 
         .nav-links {
             list-style: none;
             display: flex;
             gap: 25px;
-            margin: 0;
-            padding: 0;
         }
 
         .nav-links a {
-            color: #ff3333;
+            color: #8aa0ff;
             text-decoration: none;
             font-weight: bold;
             font-size: 1.1rem;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
             transition: 0.3s;
         }
 
         .nav-links a:hover {
             color: #ffffff;
+            text-shadow: 0 0 8px #4a6cff;
         }
 
         /* BARRA DE ESTADO */
         .estado-local {
             width: 100% !important;
-            max-width: 100% !important;
-            padding: 12px 0 !important;
+            padding: 12px 0;
             font-size: 1.2rem;
             font-weight: bold;
-            background: #000;
-            border-bottom: 3px solid #b30000;
-            color: #fff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            border-bottom: 2px solid #4a4fff;
 
-            /* CENTRADO PERFECTO */
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            text-align: center !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
 
-            /* EVITA CORTES */
-            overflow: hidden !important;
-            box-sizing: border-box !important;
+            box-sizing: border-box;
+            overflow: hidden;
         }
 
-        .estado-abierto { color: #00ff66; }
-        .estado-cerrado { color: #ff3333; }
+        .estado-abierto {
+            color: #00ffcc;
+            text-shadow: 0 0 10px #00ffcc;
+        }
+
+        .estado-cerrado {
+            color: #ff4a4a;
+            text-shadow: 0 0 10px #ff4a4a;
+        }
 
         /* SECCIÓN PRINCIPAL */
         .hero {
@@ -103,14 +103,13 @@
 
         .hero h1 {
             font-size: 2.4rem;
-            color: #ff3333;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-            margin-bottom: 10px;
+            color: #8aa0ff;
+            text-shadow: 0 0 12px #4a6cff;
         }
 
         .hero p {
             font-size: 1.2rem;
-            color: #ddd;
+            color: #d0d4ff;
         }
 
         /* INFORMACIÓN */
@@ -118,32 +117,27 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 30px 20px;
-            background: rgba(0,0,0,0.45);
-            border: 2px solid #000;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            backdrop-filter: blur(6px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             text-align: center;
         }
 
         .info h2 {
-            color: #ff3333;
+            color: #8aa0ff;
             font-size: 1.8rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 6px rgba(0,0,0,0.6);
-        }
-
-        .info-item {
-            margin: 12px 0;
-            font-size: 1.2rem;
+            text-shadow: 0 0 10px #4a6cff;
         }
 
         .info-label {
-            color: #ff3333;
+            color: #8aa0ff;
             font-weight: bold;
         }
 
         .info-value {
-            color: #ddd;
+            color: #e0e3ff;
         }
 
         /* BOTONES FLOTANTES */
@@ -156,66 +150,51 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(0,0,0,0.6);
             z-index: 999;
             transition: 0.3s;
         }
 
-        .btn-float img {
-            width: 35px;
-            height: 35px;
-        }
-
         .btn-float:hover {
             transform: scale(1.15);
+            box-shadow: 0 0 20px #4a6cff;
         }
 
-        .wsp-float { bottom: 100px; background: #25D366; }
-        .call-float { bottom: 20px; background: #007bff; }
+        .wsp-float {
+            bottom: 100px;
+            background: #25D366;
+            box-shadow: 0 0 12px #25D366;
+        }
+
+        .call-float {
+            bottom: 20px;
+            background: #4a6cff;
+            box-shadow: 0 0 12px #4a6cff;
+        }
+
+        .btn-float img {
+            width: 35px;
+        }
 
         /* FOOTER */
         footer {
-            background: #000;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(4px);
             text-align: center;
             padding: 15px;
-            font-size: 1rem;
-            color: #fff;
-            border-top: 4px solid #b30000;
-            box-shadow: 0 -4px 12px rgba(0,0,0,0.6);
+            border-top: 2px solid #4a4fff;
+            color: #d0d4ff;
         }
 
         /* RESPONSIVE */
         @media (max-width: 600px) {
-
             .logo { height: 45px; }
-
             .nav-links { gap: 12px; }
-
             .nav-links a { font-size: 0.9rem; }
-
             .hero h1 { font-size: 1.8rem; }
-
-            .hero p { font-size: 1rem; }
-
-            .info {
-                padding: 20px 15px;
-                margin: 20px;
-            }
-
-            .info-item { font-size: 1rem; }
-
-            .btn-float {
-                width: 55px;
-                height: 55px;
-            }
-
-            .btn-float img {
-                width: 28px;
-                height: 28px;
-            }
-
-            .wsp-float { bottom: 90px; }
-            .call-float { bottom: 20px; }
+            .info { margin: 20px; }
+            .btn-float { width: 55px; height: 55px; }
+            .btn-float img { width: 28px; }
         }
     </style>
 </head>
@@ -235,7 +214,7 @@
     <!-- ESTADO -->
     <div id="estado-local" class="estado-local">Verificando horario...</div>
 
-    <!-- SECCIÓN PRINCIPAL -->
+    <!-- HERO -->
     <section class="hero">
         <h1>Bienvenido a DR CELL</h1>
         <p>Servicio Técnico de Móviles en La Habana</p>
@@ -265,12 +244,11 @@
         </div>
     </section>
 
-    <!-- BOTÓN WHATSAPP -->
+    <!-- BOTONES FLOTANTES -->
     <a href="https://wa.me/5356194280" class="btn-float wsp-float" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
     </a>
 
-    <!-- BOTÓN LLAMADA -->
     <a href="tel:+5356194280" class="btn-float call-float">
         <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
     </a>
