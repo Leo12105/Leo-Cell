@@ -6,12 +6,14 @@
     <title>DR CELL - Inicio</title>
 
     <style>
-        /* ELIMINA SCROLL HORIZONTAL */
+        /* ELIMINAR SCROLL LATERAL */
         html, body {
             overflow-x: hidden !important;
             width: 100% !important;
-            margin: 0;
-            padding: 0;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
@@ -20,6 +22,9 @@
             background-size: 400% 400%;
             animation: fondoAnimado 12s ease infinite;
             color: #fff;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
         @keyframes fondoAnimado {
@@ -28,7 +33,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* CABECERA */
+        /* NAVBAR SOLO LOGO */
         .navbar {
             width: 100%;
             background: rgba(0,0,0,0.65);
@@ -38,10 +43,8 @@
             align-items: center;
             justify-content: center;
             border-bottom: 2px solid #4a4fff;
-            box-sizing: border-box;
         }
 
-        /* LOGO */
         .logo-container {
             display: flex;
             align-items: center;
@@ -68,110 +71,43 @@
             white-space: nowrap;
         }
 
-        /* ESTADO */
-        .estado-local {
-            width: 100% !important;
-            padding: 12px 0;
-            font-size: 1.2rem;
-            font-weight: bold;
-            background: rgba(0,0,0,0.55);
-            backdrop-filter: blur(4px);
-            border-bottom: 2px solid #4a4fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            box-sizing: border-box;
-        }
-
-        .estado-abierto {
-            color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc;
-        }
-
-        .estado-cerrado {
-            color: #ff4a4a;
-            text-shadow: 0 0 10px #ff4a4a;
-        }
-
-        /* HERO */
-        .hero {
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            font-size: 2.4rem;
+        h1 {
+            margin-top: 40px;
+            font-size: 2.2rem;
             color: #8aa0ff;
             text-shadow: 0 0 12px #4a6cff;
         }
 
-        .hero p {
+        p {
             font-size: 1.2rem;
             color: #d0d4ff;
+            padding: 0 20px;
         }
 
-        /* INFO */
-        .info {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 30px 20px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 12px;
-            backdrop-filter: blur(6px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-            text-align: center;
-        }
-
-        .info h2 {
-            color: #8aa0ff;
-            font-size: 1.8rem;
-            text-shadow: 0 0 10px #4a6cff;
-        }
-
-        .info-label {
-            color: #8aa0ff;
-            font-weight: bold;
-        }
-
-        .info-value {
-            color: #e0e3ff;
-        }
-
-        /* BOTONES FLOTANTES */
-        .btn-float {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
+        /* BOTÓN FLOTANTE */
+        .boton-flotante {
             position: fixed;
+            bottom: 85px; /* SUBIDO PARA NO CHOCAR CON LA BARRA */
             right: 20px;
+            z-index: 2000; /* ENCIMA DE LA BARRA INFERIOR */
+            background: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 0 15px rgba(0,0,0,0.6);
-            z-index: 999;
+            box-shadow: 0 0 12px #25D366;
             transition: 0.3s;
         }
 
-        .btn-float:hover {
-            transform: scale(1.15);
-        }
-
-        .wsp-float {
-            bottom: 100px;
-            background: #25D366;
-            box-shadow: 0 0 12px #25D366;
-        }
-
-        .call-float {
-            bottom: 20px;
-            background: #4a6cff;
-            box-shadow: 0 0 12px #4a6cff;
-        }
-
-        .btn-float img {
+        .boton-flotante img {
             width: 35px;
+            height: 35px;
+        }
+
+        .boton-flotante:hover {
+            transform: scale(1.1);
         }
 
         /* MENÚ INFERIOR */
@@ -219,71 +155,32 @@
             filter: drop-shadow(0 0 6px #4a6cff);
         }
 
-        /* FOOTER */
         footer {
-            background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(4px);
-            text-align: center;
+            margin-top: 40px;
             padding: 15px;
+            background: rgba(0,0,0,0.6);
             border-top: 2px solid #4a4fff;
-            color: #d0d4ff;
             margin-bottom: 60px;
         }
-
     </style>
 </head>
 
 <body>
 
-    <!-- CABECERA -->
+    <!-- NAVBAR -->
     <nav class="navbar">
         <div class="logo-container">
-            <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
+            <img src="img/logo-dr-cell.png" class="logo">
             <span class="logo-text">DR CELL</span>
         </div>
     </nav>
 
-    <!-- ESTADO -->
-    <div id="estado-local" class="estado-local">Verificando horario...</div>
+    <h1>Servicio Técnico Profesional</h1>
+    <p>Reparación de software, hardware, desbloqueos, FRP, flasheos y más.</p>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Bienvenido a DR CELL</h1>
-        <p>Servicio Técnico de Móviles en La Habana</p>
-    </section>
-
-    <!-- INFORMACIÓN -->
-    <section class="info">
-        <h2>Información</h2>
-
-        <div class="info-item">
-            <span class="info-label">Horario:</span>
-            <span class="info-value">
-                Lunes a Viernes: 10:00 AM – 4:00 PM<br>
-                Sábados: 10:00 AM – 2:00 PM<br>
-                Domingos: Cerrado
-            </span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">Dirección:</span>
-            <span class="info-value">Marianao, Avenida 43 / 118 y 120 #11807 Interior 2</span>
-        </div>
-
-        <div class="info-item">
-            <span class="info-label">Teléfono:</span>
-            <span class="info-value">+53 5619 4280</span>
-        </div>
-    </section>
-
-    <!-- BOTÓN WHATSAPP -->
-    <a href="https://wa.me/5356194280" class="btn-float wsp-float" target="_blank">
+    <!-- BOTÓN FLOTANTE -->
+    <a href="https://wa.me/5356194280" class="boton-flotante">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
-    </a>
-
-    <!-- BOTÓN LLAMADA -->
-    <a href="tel:+5356194280" class="btn-float call-float">
-        <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
     </a>
 
     <!-- MENÚ INFERIOR -->
@@ -307,46 +204,6 @@
     <footer>
         © 2026 DR CELL - Todos los derechos reservados
     </footer>
-
-    <!-- SCRIPT HORARIO -->
-    <script>
-    function actualizarEstado() {
-        const estado = document.getElementById("estado-local");
-
-        const ahora = new Date();
-        const opciones = { timeZone: "America/Havana" };
-        const horaCuba = new Date(ahora.toLocaleString("en-US", opciones));
-
-        const dia = horaCuba.getDay();
-        const hora = horaCuba.getHours();
-        const minutos = horaCuba.getMinutes();
-
-        const totalMin = hora * 60 + minutos;
-
-        let abierto = false;
-
-        if (dia >= 1 && dia <= 5) {
-            if (totalMin >= 600 && totalMin <= 960) abierto = true;
-        }
-
-        if (dia === 6) {
-            if (totalMin >= 600 && totalMin <= 840) abierto = true;
-        }
-
-        if (abierto) {
-            estado.innerHTML = "🟢 Estamos ABIERTO ahora mismo";
-            estado.classList.add("estado-abierto");
-            estado.classList.remove("estado-cerrado");
-        } else {
-            estado.innerHTML = "🔴 Estamos CERRADO ahora mismo";
-            estado.classList.add("estado-cerrado");
-            estado.classList.remove("estado-abierto");
-        }
-    }
-
-    actualizarEstado();
-    setInterval(actualizarEstado, 60000);
-    </script>
 
 </body>
 </html>
