@@ -16,8 +16,6 @@
 
         body {
             font-family: 'Segoe UI', sans-serif;
-
-            /* FONDO DEGRADADO ESTILO QvaCloud */
             background: linear-gradient(135deg, #0a0f24, #1a1f3c, #2a1f5c);
             background-size: 400% 400%;
             animation: fondoAnimado 12s ease infinite;
@@ -38,19 +36,18 @@
             padding: 15px 25px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             border-bottom: 2px solid #4a4fff;
             box-sizing: border-box;
         }
 
-        /* CONTENEDOR DEL LOGO + TEXTO */
+        /* LOGO */
         .logo-container {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        /* LOGO CIRCULAR */
         .logo {
             height: 70px;
             width: 70px;
@@ -60,7 +57,6 @@
             box-shadow: 0 0 12px #4a6cff;
         }
 
-        /* TEXTO DR CELL — ESTILO 1 FUTURISTA */
         .logo-text {
             font-size: 1.8rem;
             font-weight: 800;
@@ -72,29 +68,7 @@
             white-space: nowrap;
         }
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 25px;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links a {
-            color: #8aa0ff;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: 0.3s;
-            white-space: nowrap;
-        }
-
-        .nav-links a:hover {
-            color: #ffffff;
-            text-shadow: 0 0 8px #4a6cff;
-        }
-
-        /* BARRA DE ESTADO */
+        /* ESTADO */
         .estado-local {
             width: 100% !important;
             padding: 12px 0;
@@ -103,14 +77,11 @@
             background: rgba(0,0,0,0.55);
             backdrop-filter: blur(4px);
             border-bottom: 2px solid #4a4fff;
-
             display: flex;
             justify-content: center;
             align-items: center;
             text-align: center;
-
             box-sizing: border-box;
-            overflow: hidden;
         }
 
         .estado-abierto {
@@ -123,7 +94,7 @@
             text-shadow: 0 0 10px #ff4a4a;
         }
 
-        /* SECCIÓN PRINCIPAL */
+        /* HERO */
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -140,7 +111,7 @@
             color: #d0d4ff;
         }
 
-        /* INFORMACIÓN */
+        /* INFO */
         .info {
             max-width: 900px;
             margin: 40px auto;
@@ -185,7 +156,6 @@
 
         .btn-float:hover {
             transform: scale(1.15);
-            box-shadow: 0 0 20px #4a6cff;
         }
 
         .wsp-float {
@@ -204,6 +174,51 @@
             width: 35px;
         }
 
+        /* MENÚ INFERIOR */
+        .menu-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(6px);
+            border-top: 2px solid #4a4fff;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            z-index: 999;
+        }
+
+        .menu-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #8aa0ff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px #4a6cff;
+        }
+
+        .menu-item svg {
+            width: 26px;
+            height: 26px;
+            stroke: #8aa0ff;
+            fill: none;
+            stroke-width: 2;
+            margin-bottom: 3px;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover svg {
+            stroke: #ffffff;
+            filter: drop-shadow(0 0 6px #4a6cff);
+        }
+
         /* FOOTER */
         footer {
             background: rgba(0,0,0,0.6);
@@ -212,17 +227,9 @@
             padding: 15px;
             border-top: 2px solid #4a4fff;
             color: #d0d4ff;
+            margin-bottom: 60px;
         }
 
-        /* RESPONSIVE */
-        @media (max-width: 600px) {
-            .logo { height: 50px; width: 50px; }
-            .logo-text { font-size: 1.3rem; letter-spacing: 1px; }
-            .nav-links { gap: 12px; }
-            .nav-links a { font-size: 0.85rem; }
-            .hero h1 { font-size: 1.8rem; }
-            .info { margin: 20px; }
-        }
     </style>
 </head>
 
@@ -230,18 +237,10 @@
 
     <!-- CABECERA -->
     <nav class="navbar">
-
         <div class="logo-container">
             <img src="img/logo-dr-cell.png" alt="DR CELL" class="logo">
             <span class="logo-text">DR CELL</span>
         </div>
-
-        <ul class="nav-links">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-
     </nav>
 
     <!-- ESTADO -->
@@ -286,6 +285,24 @@
     <a href="tel:+5356194280" class="btn-float call-float">
         <img src="https://cdn-icons-png.flaticon.com/512/724/724664.png">
     </a>
+
+    <!-- MENÚ INFERIOR -->
+    <div class="menu-inferior">
+        <a href="index.html" class="menu-item">
+            <svg viewBox="0 0 24 24"><path d="M3 12l9-9 9 9"/><path d="M9 21V9h6v12"/></svg>
+            <span>Inicio</span>
+        </a>
+
+        <a href="servicios.html" class="menu-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            <span>Servicios</span>
+        </a>
+
+        <a href="contacto.html" class="menu-item">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Contacto</span>
+        </a>
+    </div>
 
     <footer>
         © 2026 DR CELL - Todos los derechos reservados
